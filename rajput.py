@@ -17,9 +17,9 @@ LOG_FILE = "log.txt"
 KEY_FILE = "keys.json"
 
 # Cooldown settings
-COOLDOWN_TIME = 10  # in seconds
+COOLDOWN_TIME = 0  # in seconds
 CONSECUTIVE_ATTACKS_LIMIT = 6
-CONSECUTIVE_ATTACKS_COOLDOWN = 5  # in seconds
+CONSECUTIVE_ATTACKS_COOLDOWN = 0  # in seconds
 
 # In-memory storage
 users = {}
@@ -183,8 +183,8 @@ def handle_bgmi(message):
             try:
                 port = int(command[2])
                 time = int(command[3])
-                if time > 120:
-                    response = "⚠️𝐄𝐑𝐑𝐎𝐑:120 𝐒𝐄 𝐓𝐇𝐎𝐃𝐀 𝐊𝐀𝐌 𝐓𝐈𝐌𝐄 𝐃𝐀𝐀𝐋 𝐆𝐀𝐍𝐃𝐔."
+                if time > 150:
+                    response = "⚠️𝐄𝐑𝐑𝐎𝐑:150 𝐒𝐄 𝐓𝐇𝐎𝐃𝐀 𝐊𝐀𝐌 𝐓𝐈𝐌𝐄 𝐃𝐀𝐀𝐋 𝐆𝐀𝐍𝐃𝐔."
                 else: 
                     record_command_logs(user_id, '/bgmi', target, port, time)
                     log_command(user_id, target, port, time)
